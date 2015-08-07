@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>Audio Player</title>
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/id3-minimized.js"></script>
+	<script src="js/main.js"></script>
+</head>
+<body>
+	<div class="body">
+		<div id="palyer">
+			<div id="cover_box">
+				<div id="input">
+					<a href="#" onclick="openFile()">Выберите аудио файл</a>, или перетащите его сюда
+				</div>
+				<div class="cover">
+					<img id="cover_img" src="" alt="">
+					<div class="track_info">
+						<div class="title"></div>
+						<div class="album"></div>
+						<a href="#" onclick="openFile()" class="file_name"></a>
+					</div>
+					<div class="time">
+						<span class="current"></span>
+						<span class="total"></span>
+					</div>
+					
+					<canvas height="140" width="328" id="visualizer"></canvas>
+					<div id="control_btn"></div>
+					<button id="tune_btn"></button>
+					<ul class="tune_list">
+						<li onclick="setPreset('pop', this)">Pop</li>
+						<li onclick="setPreset('rock', this)">Rock</li>
+						<li onclick="setPreset('jazz', this)">Jazz</li>
+						<li onclick="setPreset('classic', this)">Classic</li>
+						<li onclick="setPreset('normal', this)" class="active">Normal</li>
+					</ul>
+				</div>
+				<div class="notification"><span id="notification"></span></div>
+			</div>
+			<div id="progress_bar">
+				<div id="progress"></div>
+			</div>
+			<div class="ekvalayzer_box">
+				<ul id="ekvalayzer_list">
+					<li class="volume">
+						<div class="range">
+							<div class="btn"></div>
+						</div>
+						<div class="volume_lavel">
+							<span class="heig">+12 dB</span>
+							<span class="medium">0 dB</span>
+							<span class="low">-12 dB</span>
+						</div>
+					</li>
+					<li><div class="range"><div class="btn"></div></div></li>
+					<li><div class="range"><div class="btn"></div></div></li>
+					<li><div class="range"><div class="btn"></div></div></li>
+					<li><div class="range"><div class="btn"></div></div></li>
+					<li><div class="range"><div class="btn"></div></div></li>
+					<li><div class="range"><div class="btn"></div></div></li>
+					<li><div class="range"><div class="btn"></div></div></li>
+					<li><div class="range"><div class="btn"></div></div></li>
+					<li><div class="range"><div class="btn"></div></div></li>
+					<li><div class="range"><div class="btn"></div></div></li>
+				</ul>
+			</div>
+		</div>
+		<div class="links">
+			<a class="github" target="_blank" href="https://github.com/Borodin/Yandex_SHRI_Task_3">gitHub.cum/Borodin/Yandex_SHRI_Task_3</a>
+			<a class="download" href="http://maximborodin.ru/works/shri/downloads/music.zip" download="Музыка для примера.">Скачать музыку для примера</a>
+		</div>
+	</div>
+</body>
+</html>

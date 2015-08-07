@@ -1,0 +1,392 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;	
+}
+
+body{
+	font-family: 'Open Sans', sans-serif;
+	background: #c5d5d7;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+	-webkit-user-select: none;
+	cursor: default;
+}
+
+.body{
+	width: 360px;
+	position: absolute;
+	margin: auto;
+	height: 600px;
+	top:0; right: 0; bottom: 10%; left: 0;
+}
+
+.links{
+	margin-top: 32px;
+	width: 200px;
+	font-size: 12px;
+}
+
+.links a{
+	position: relative;
+	margin-left: 23px;
+	line-height: 1.9em;
+}
+
+.links a:before{
+	left: -23px; top: 1px;
+	position: absolute;
+	content: '';
+	display: block;
+	height: 16px;
+	width: 16px;
+	opacity: .6;
+}
+
+
+a{
+	text-decoration: none;
+	color: #000;
+	border-bottom: 1px solid rgba(0, 0, 0, .3);
+}
+
+#palyer a{
+	color: rgba(255,255,255,.8);
+	border-bottom: 1px dotted rgba(255, 255, 255, .3);
+}
+
+.links a.github:before{
+	background: url(../img/github_icon.png);
+}
+
+.links a.download:before{
+	background: url(../img/download_icon.png);
+}
+
+#palyer{
+	background: #fff;
+	width: 360px;
+	height: 550px;
+	border-radius: 2px;
+	box-shadow: 0px 11px 25.23px 3.77px rgba(24, 40, 43, 0.12);
+}
+
+#cover_box{
+	perspective:360px;
+	overflow: hidden;
+	position: relative;
+	color: rgba(255,255,255,.8);
+	height: 360px;
+}
+
+#cover_box.hover #input{
+	box-shadow: inset 0px 0px 150px 0px rgba(0, 0, 0, .8);
+}
+
+#cover_box img{
+	display: block;
+	/*opacity: .46;*/
+	width: 100%;
+	height: 100%;
+}
+
+#cover_box .cover{
+	width: 100%;
+	height: inherit;
+	position: absolute;
+	background: #ff3f4d;
+	bottom: -360px;
+	opacity: .2;
+	transform:scale(.3) rotateX(-30deg);
+	transition: all.5s ease;
+}
+
+#cover_box.drop .cover{
+	bottom: 0;
+	opacity: 1;
+	transform:scale(1);
+}
+
+#input{
+	position: absolute;
+	display: block;
+	height: 100%;
+	width: 100%;
+	background: #241e26;
+	font-size: 12px;
+	text-align: center;
+	line-height: 350px;
+	transition: box-shadow.2s ease;
+}
+
+.track_info{
+	position: absolute;
+	padding: 0 16px;
+	width: 87%;
+	z-index: 1;
+	top:25px; left: 0;
+	white-space: nowrap;
+	overflow: hidden;
+
+	-moz-user-select: text;
+	-khtml-user-select: text;
+	user-select: text;
+	-webkit-user-select: text;
+}
+
+.track_info *::-moz-selection{background: #000; color: #fff;} 
+.track_info *::webkit-selection{background: #000; color: #fff;} 
+.track_info *::selection{background: #000; color: #fff;}
+
+.track_info .title{
+	font-size: 24px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.track_info .album{
+	font-size: 18px;
+	line-height: 1.7em;
+}
+
+.track_info .file_name{
+	font-size: 12px;
+}
+
+#visualizer{
+	margin: 24px 16px;
+	position: absolute;
+	bottom: 0;
+}
+
+.time{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	font-size: 10px;
+	padding: 8px 16px; //9px
+}
+
+.time span.total{
+	float: right;
+}
+
+#tune_btn{
+	position: absolute;
+	background: url(../img/settings.png) no-repeat;
+	background-size: 50%;
+	background-position: center;
+	top: 0px; right: 0px;
+	height: 42px;
+	width: 42px;
+	cursor: pointer;
+	z-index: 2;
+	border: none;
+	outline: none;
+	opacity: .8;
+	transition: opacity.2s ease;
+}
+
+#tune_btn:hover, #tune_btn:focus{
+	opacity: 1;
+}
+
+.tune_list{
+	font-size: 14px;
+	position: absolute;
+	top:-9999px;
+	right: -100px;
+	width: 100px;
+	padding: 10px 0;
+	background: #fff;
+	list-style: none;
+	text-align: left;
+	line-height: 1.2em;
+	border-radius:2px;
+	opacity: .5;
+	color: #000;
+	box-shadow: 0 2px 4px rgba(0,0,0,.07);
+	transition: right.3s ease, opacity.3s ease;
+}
+
+.tune_list.view{
+	right: -105px;
+	top:0;
+	opacity: 1;
+}
+
+.tune_list li:first-child:before{
+	position: absolute;
+	content: '';
+	left: -8px;
+	top:13px;
+	width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-right: 8px solid #fff;
+    border-bottom: 8px solid transparent;
+}
+
+.tune_list li:first-child:hover:before{
+	border-right: 8px solid #f4f4f4;
+}
+
+.tune_list li{
+	cursor: pointer;
+	padding: 4px 16px;
+}
+
+.tune_list .active{
+	font-weight: 600;
+}
+
+.tune_list li:hover{
+	background: #f4f4f4;
+}
+
+@-webkit-keyframes rotate{ 0%{ transform: rotate(0deg); } 100%{ transform: rotate(360deg); } }
+@-moz-keyframes rotate{ 0%{ transform: rotate(0deg); } 100%{ transform: rotate(360deg); } }
+@keyframes rotate{ 0%{ transform: rotate(0deg); } 100%{ transform: rotate(360deg); } }
+
+#control_btn{
+	height: 84px;
+	width: 84px;
+	border-radius: 42px;
+	position: absolute;
+	top:0; right: 0; bottom: 0; left: 0;
+	margin: auto;
+	background: url(../img/loader.png) rgba(0,0,0,.33) center no-repeat;
+	-webkit-animation: rotate 1s linear infinite;
+	-moz-animation: rotate 1s linear infinite;
+	animation: rotate 1s linear infinite;
+	background-size: 25%;
+	transition: scale.1s ease;
+	
+}
+
+#control_btn.play,
+#control_btn.pause{
+	cursor: pointer;
+	animation: none;
+}
+
+#control_btn.play{ background-image: url(../img/play.png) }
+#control_btn.pause{ background-image: url(../img/pause.png) }
+
+
+#control_btn:active{
+	transform:scale(.98);
+}
+
+#progress_bar{
+	background: #e8e8e8;
+	height: 6px;
+	cursor: pointer;
+}
+#progress{
+	width: 0%;
+	background: #ff3f4d;
+	height: inherit;
+}
+
+
+/* ekvalayzer */
+
+#ekvalayzer_list{
+	padding: 16px;
+	padding-top: 20px;
+	height: 140px;
+	display: flex;
+	justify-content: space-around;
+}
+
+#ekvalayzer_list li{
+	position: relative;
+	list-style: none;
+	width: 7px;
+	background: #e8e8e8;
+	height: inherit;
+}
+
+#ekvalayzer_list li,
+#ekvalayzer_list .range{
+	border-radius: 3px;
+}
+
+#ekvalayzer_list .range{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 50%;
+	background: #cecece;
+	transition: height.4s ease;
+}
+
+#ekvalayzer_list .range.noanim{
+	transition: none;
+}
+
+#ekvalayzer_list .btn{
+	height: 15px;
+	width: 15px;
+	border-radius: 8px;
+	box-shadow: 0 1px 3.5px .5px rgba(0,0,0,.1);
+	background: #fff;
+	position: absolute;
+	top: -7.5px;
+	left: -4px;
+}
+
+#ekvalayzer_list .volume .range{
+	background: #ff3f4d;
+}
+
+#ekvalayzer_list .volume{
+	margin-right: 42px;
+}
+
+.volume_lavel{
+	font-size: 10px;
+	color:#999;
+}
+
+.volume_lavel span{
+	width: 70px;
+	position: absolute;
+	left: 16px;
+	display: block;
+}
+
+.volume_lavel .medium{
+	top:50%;
+	margin-top: -7px;
+}
+
+.volume_lavel .low{
+	bottom: 0;
+}
+
+.notification{
+	position: absolute;
+	bottom: 40px;
+	width: 100%;
+	font-size: 12px;
+	text-align: center;
+
+}
+
+.notification span{
+	opacity: 0;
+	display: inline-block;
+	padding: 5px 25px;
+	border-radius: 15px;
+	transition: opacity.4s ease;
+	background: rgba(0,0,0,.7);
+}
+
+#notification.view{
+	opacity: .8;
+}
