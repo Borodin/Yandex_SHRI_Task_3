@@ -2,7 +2,7 @@
 
 Рабочий пример — [borodin.gihub.io/Yandex_SHRI_Task_3](http://borodin.github.io/Yandex_SHRI_Task_3/)
 
-[![Скриншот плеера](http://maximborodin.ru/works/shri/doc/demo.png)](http://borodin.github.io/Yandex_SHRI_Task_3/)
+[![Скриншот плеера](http://maximborodin.ru/works/shri/doc/demo.png?1)](http://borodin.github.io/Yandex_SHRI_Task_3/)
 
 Я немного отошел от задания и вместо кнопок Play и Stop сделал одну кнопку Play/Pause, я думаю она гораздо полезнее.
 
