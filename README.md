@@ -1,5 +1,5 @@
 #ШРИ Задание №3 — Аудио плеер
-[![Gitter](https://badges.gitter.im/shri-2015/gitter.svg)](https://gitter.im/shri-2015/gitter/main)
+[![Gitter](https://badges.gitter.im/shri-2015/gitter.svg)](https://gitter.im/shri-2015//main)
 
 Рабочий пример — [borodin.gihub.io/Yandex_SHRI_Task_3](http://borodin.github.io/Yandex_SHRI_Task_3/)
 
