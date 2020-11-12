@@ -1,9 +1,9 @@
 #ШРИ Задание №3 — Аудио плеер
 [![Gitter](https://badges.gitter.im/shri-2015/gitter.svg)](https://gitter.im/shri-2015/main)
 
-Рабочий пример — [borodin.gihub.io/Yandex_SHRI_Task_3](http://borodin.github.io/Yandex_SHRI_Task_3/)
+Рабочий пример — [borodin.gihub.io/Yandex_SHRI_Task_3](https://borodin.github.io/Yandex_SHRI_Task_3/)
 
-[![Скриншот плеера](https://github.com/Borodin/Yandex_SHRI_Task_3/raw/gh-pages/img/demo.png)](http://borodin.github.io/Yandex_SHRI_Task_3/)
+[![Скриншот плеера](https://github.com/Borodin/Yandex_SHRI_Task_3/raw/gh-pages/img/demo.png)](https://borodin.github.io/Yandex_SHRI_Task_3/)
 
 Я немного отошел от задания и вместо кнопок Play и Stop сделал одну кнопку Play/Pause, я думаю она гораздо полезнее.
 
